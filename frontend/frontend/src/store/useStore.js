@@ -55,7 +55,7 @@ export const useStore = create(
         console.log('🛒 Cart payload being sent:', formattedCart);
 
         try {
-          const res = await fetch('http://localhost:5000/api/cart/sync', {
+          const res = await fetch('https://e-commerce-0ong.onrender.com/api/cart/sync', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -90,7 +90,7 @@ export const useStore = create(
         if (!userInfo) return;
 
         try {
-          const res = await fetch('http://localhost:5000/api/cart', {
+          const res = await fetch('https://e-commerce-0ong.onrender.com/api/cart', {
             credentials: 'include',
           });
 

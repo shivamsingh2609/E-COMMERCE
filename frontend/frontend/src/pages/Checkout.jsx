@@ -59,7 +59,7 @@ const handleOrder = async () => {
   console.log("Sending order payload:", payload);
 
   try {
-    const res = await fetch('http://localhost:5000/api/orders', {
+    const res = await fetch('https://e-commerce-0ong.onrender.com/api/orders', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

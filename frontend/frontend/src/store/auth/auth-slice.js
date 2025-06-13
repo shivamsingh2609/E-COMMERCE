@@ -5,7 +5,7 @@ export const createAuthSlice = (set, get) => ({
 
   fetchUserInfo: async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/users/profile', {
+      const res = await fetch('https://e-commerce-0ong.onrender.com/api/users/profile', {
         credentials: 'include',
       });
 
@@ -25,7 +25,7 @@ export const createAuthSlice = (set, get) => ({
 
   login: async (email, password) => {
     try {
-      const res = await fetch('http://localhost:5000/api/users/login', {
+      const res = await fetch('https://e-commerce-0ong.onrender.com/api/users/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
@@ -46,7 +46,7 @@ export const createAuthSlice = (set, get) => ({
 
   logout: async () => {
     try {
-      await fetch('http://localhost:5000/api/users/logout', {
+      await fetch('https://e-commerce-0ong.onrender.com/api/users/logout', {
         method: 'POST',
         credentials: 'include',
       });
