@@ -1,4 +1,3 @@
-
 import asyncHandler from 'express-async-handler';
 import Order from '../models/orderModel.js';
 
@@ -11,22 +10,30 @@ export const placeOrder = asyncHandler(async (req, res) => {
   }
 
   try {
-    console.log('Creating order with data:', {
+    const orderItems = cart.map((item, index) => {
+      if (!item.productId && !item.id) {
+        throw new Error(`Missing productId for item at index ${index}`);
+      }
+
+      return {
+       product: item.productId ?? item.id ?? item._id,
+        name: item.name,
+        quantity: item.quantity,
+        price: item.price,
+        image: item.image || item.thumbnail || '',
+      };
+    });
+
+    console.log('Creating order with:', {
       user: req.user._id,
-      cart,
+      orderItems,
       shippingInfo,
       totalAmount,
     });
 
     const order = new Order({
       user: req.user._id,
-      orderItems: cart.map((item) => ({
-        product: item.productId,
-        name: item.name,
-        quantity: item.quantity,
-        price: item.price,
-        image: item.image || item.thumbnail,
-      })),
+      orderItems,
       shippingInfo,
       totalAmount,
     });
