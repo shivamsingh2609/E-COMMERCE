@@ -27,16 +27,6 @@ function App() {
                <Route path="/product/:id" element={<ProductDetail />} />
                <Route path="/checkout" element={<CheckoutPage />} />
 
-               {/* <Route path="/profile" element={
-  <PrivateRoute>
-    <ProfilePage />
-  </PrivateRoute>
-} /> */}
-              {/* <Route path="/product/:id" element={<ProductDetail />} />
-              <Route path="/cart" element={<Cart />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/checkout" element={<Checkout />} /> */}
             </Routes>
           </main>
           {/* <Notification /> */}
