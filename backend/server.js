@@ -13,7 +13,7 @@ const app = express();
 const PORT = 5000;
 
 app.use(cors({
-  origin: 'https://e-commerce-sigma-two-13.vercel.app/', 
+  origin: 'https://e-commerce-sigma-two-13.vercel.app', 
    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"], // ✅ EXACT origin of your Vite frontend
   credentials: true                // ✅ Allow sending cookies
 }));
